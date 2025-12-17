@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Boda D & F</title>
+</head>
+<body>
+    <div class="inicio">
+
+    <h2 class="fecha-evento">18.09.2026</h2>
+
+    <div class="linea-texto"></div>
+
+        <div class="nombres-novios">
+            <h1 class="nombre-izq">Daniel</h1>
+            <h1 class="ampersand">&</h1>
+            <h1 class="nombre-der">Fernanda</h1>
+        </div>
+
+        <div class="linea-texto"></div>
+
+        <p class="texto-invitacion">"¡Nos casamos! Acompañanos a celebrar este momento inolvidable."</p>
+
+    </div>
+
+    <section class="segunda-seccion">
+
+        <h2 class="titulo-seccion" data-aos="fade" data-aos-duration="1200">Faltan</h2>
+        
+        <div class="contador-tiempo" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="bloque-tiempo">
+                <span id="dias">00</span>
+                <p>Días</p>
+            </div>
+            <div class="bloque-tiempo">
+                <span id="horas">00</span>
+                <p>Horas</p>
+            </div>
+            <div class="bloque-tiempo">
+                <span id="minutos">00</span>
+                <p>Minutos</p>
+            </div>
+            <div class="bloque-tiempo">
+                <span id="segundos">00</span>
+                <p>Segundos</p>
+            </div>
+        </div>
+        
+        
+        </section>
+
+<section class="ceremonia">
+    <h1 class="txtceremonia" data-aos="fade-down">Ceremonia</h1>
+    
+    <div data-aos="fade-right" data-aos-delay="200">
+        <h2 class="txtlugar">Lugar</h2>
+        <h5>Hacienda Atongo</h5>
+    </div>
+    
+    <div data-aos="fade-left" data-aos-delay="400">
+        <h2 class="txtfecha">Fecha</h2>
+        <h5>18.09.2026 | 16:30 hrs</h5>
+    </div>
+    
+    <div data-aos="fade-up" data-aos-delay="600">
+        <h2 class="txtdireccion">Dirección</h2>
+        <h5>Domicilio Conocido S/N, 76255 Atongo, Qro</h5>
+    </div>
+    
+    <a href="javascript:void(0)" class="ubicacion" onclick="abrirMapa()" data-aos="zoom-in" data-aos-delay="800">¿Cómo llegar?</a>
+</section>
+
+<div id="modalMapa" class="modal-mapa">
+    <div class="contenido-modal">
+        <span class="cerrar-modal" onclick="cerrarMapa()">&times;</span>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d59695.13820596347!2d-100.3032661!3d20.7529771!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3601644290947%3A0xd20fcb8d987ec04d!2sHacienda%20Atongo!5e0!3m2!1ses!2smx!4v1765982452349!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+
+<section class="informacion-fiesta">
+    <h1 class="txtInformacion" data-aos="fade-down">Información de la Fiesta</h1>
+    <p class="detalles" data-aos="fade-up">Aquí algunos detalles a tener en cuenta</p>
+
+    <div class="tarjetas-container">
+        <div class="tarjeta ninos" data-aos="flip-left" data-aos-delay="200">
+            <h2>Niños Bienvenidos</h2>
+            <p>Los más pequeños de la familia son bienvenidos a la celebración.</p>
+        </div>
+
+        <div class="tarjeta vestimenta" data-aos="flip-left" data-aos-delay="400">
+            <h2>Vestimenta</h2>
+            <a href="javascript:void(0)" class="btn-ver" onclick="abrirModal('modalVestimenta')">Ver más</a>
+        </div>
+
+        <div class="tarjeta importante" data-aos="flip-left" data-aos-delay="600">
+            <h2>Información Importante</h2>
+            <a href="javascript:void(0)" class="btn-ver" onclick="abrirModal('modalImportante')">Ver más</a>
+        </div>
+    </div>
+</section>
+
+<div id="modalVestimenta" class="modal-info">
+    <div class="contenido-modal-info">
+        <span class="cerrar-modal" onclick="cerrarModal('modalVestimenta')">×</span>
+        <h3>Código de Vestimenta</h3>
+        <p>👗🤵 Vestimenta formal (traje y vestido largo) </p>
+        <p>🎨 De preferencia verde y café cálidos</p>
+        <p>🚫 No blanco No beige</p>
+    </div>
+</div>
+
+<div id="modalImportante" class="modal-info">
+    <div class="contenido-modal-info">
+        <span class="cerrar-modal" onclick="cerrarModal('modalImportante')">×</span>
+        <h3>Confirmación y Hospedaje</h3>
+        <p>Tenemos el honor de invitarte a celebrar nuestra boda.</p>
+        <p><strong>Confirma tu asistencia</strong> antes del 05 de febrero de 2026.</p>
+        <p>El hotel se confirma directo con los novios.</p>
+        <p>Costo del boleto por persona</p>
+        <p>$1150</p>
+        <div class="contacto">
+            <p>📞 44 61 17 67 28</p>
+            <p>📞 44 21 36 64 15</p>
+        </div>
+        <p class="firma">Con cariño,<br><strong>Fernanda & Daniel</strong></p>
+    </div>
+</div>
+
+
+<section class="galeria">
+    <h1 class="txtGaleria">Nuestros Momentos</h1>
+    <p class="subGaleria">Un recorrido por nuestra historia</p>
+
+    <div class="carousel">
+        <div class="carousel-track">
+
+            <div class="slide active">
+                <img src="imgs/b8.jpeg" alt="">
+                <span class="caption">Nuestro primer viaje</span>
+            </div>
+
+            <div class="slide">
+                <img src="imgs/b2.jpeg" alt="">
+                <span class="caption">Momentos inolvidables</span>
+            </div>
+
+            <div class="slide">
+                <img src="imgs/b3.jpeg" alt="">
+                <span class="caption">Siempre juntos</span>
+            </div>
+
+            <div class="slide">
+                <img src="imgs/b4.jpeg" alt="">
+                <span class="caption">Risas eternas</span>
+            </div>
+
+            <div class="slide">
+                <img src="imgs/b5.jpeg" alt="">
+                <span class="caption">Nuestro compromiso</span>
+            </div>
+
+            <div class="slide">
+                <img src="imgs/b6.jpeg" alt="">
+                <span class="caption">Un paso más</span>
+            </div>
+
+            <div class="slide">
+                <img src="imgs/b7.jpeg" alt="">
+                <span class="caption">Para siempre</span>
+            </div>
+
+        </div>
+
+        <div class="controls">
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+        </div>
+    </div>
+</section>
+
+
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="contador.js"></script>
+<script src="fiesta.js"></script>
+</html>
