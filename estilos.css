@@ -1,0 +1,835 @@
+/* ================================================= */
+/* CONFIGURACIÓN BÁSICA                              */
+/* ================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: #162127;
+}
+
+/* ================================================= */
+/* SECCIÓN 1: PORTADA (ESTILOS Y ANIMACIONES)        */
+/* ================================================= */
+.inicio {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(imgs/b1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+/* --- Elementos de Texto Básicos --- */
+
+/* Estilos generales para todos los H1 dentro de inicio */
+.inicio h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    margin: -5px 0;
+    display: inline-block; /* Necesario para que el transform funcione bien */
+}
+
+.inicio h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin: 10px 0;
+}
+
+.nombres-novios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+/* --- APLICACIÓN DE ANIMACIONES DE PORTADA --- */
+
+/* 1. Fecha: Rebote */
+.fecha-evento {
+    opacity: 0;
+    animation: reboteFecha 1.5s ease-out forwards;
+}
+
+/* 2. Líneas: Zoom */
+.linea-texto {
+    height: 1px;
+    background-color: #ffffff;
+    width: 320px;
+    margin: 15px auto;
+    opacity: 0;
+    animation: entradaZoom 1.5s ease-out 0.8s forwards;
+}
+
+/* 3. Daniel: Desde la izquierda */
+.nombre-izq {
+    opacity: 0;
+    /* Aseguramos que herede las propiedades de texto */
+    font-family: 'Great Vibes', cursive; 
+    animation: slideIzquierda 1.5s ease-out 0.5s forwards;
+}
+
+/* 4. Ampersand (&): Zoom */
+.ampersand {
+    opacity: 0;
+    animation: entradaZoom 1s ease-out 1s forwards;
+}
+
+/* 5. Fernanda: Desde la derecha */
+.nombre-der {
+    opacity: 0;
+    /* Aseguramos que herede las propiedades de texto */
+    font-family: 'Great Vibes', cursive;
+    animation: slideDerecha 1.5s ease-out 0.5s forwards;
+}
+
+/* 6. Texto invitación: Desde arriba */
+.texto-invitacion {
+    font-family: 'Montserrat', sans-serif; 
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 40px; 
+    padding: 0 10%;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    
+    /* Configuración de Animación */
+    opacity: 0;
+    animation: slideAbajo 1.5s ease-out 1.2s forwards;
+}
+
+
+/* ================================================= */
+/* SECCIÓN 2: CONTADOR (ESTILOS Y AOS)               */
+/* ================================================= */
+.segunda-seccion {
+    background-color: #162127;
+    color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.titulo-seccion {
+    font-family: 'Pinyon Script', cursive; 
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #5d4037; 
+}
+
+.contador-tiempo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 50px auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #724b39;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bloque-tiempo {
+    text-align: center;
+    padding: 0 5px;
+}
+
+.bloque-tiempo span {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.8rem; 
+    font-weight: 700;
+    color: #162127;
+    display: inline-block;
+    line-height: 1.1;
+}
+
+.bloque-tiempo p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #e0d9c4;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* --- INTERACCIÓN CON AOS (Scroll) --- */
+
+.titulo-seccion[data-aos],
+.contador-tiempo[data-aos] {
+    opacity: 0;
+}
+
+.titulo-seccion[data-aos].aos-animate {
+    animation: entradaZoom 3s ease-out forwards;
+}
+
+.contador-tiempo[data-aos].aos-animate {
+    animation: entradaContador 3s ease-out 0.3s forwards;
+}
+
+/* Clase utilitaria para JS */
+.animar-rebote {
+    animation: reboteNumero 0.5s ease-out;
+}
+
+/* --- ACTIVACIÓN MANUAL DE AOS PARA SECCIÓN 3 --- */
+
+/* Título Ceremonia (fade-down) */
+.txtceremonia[data-aos].aos-animate {
+    animation: slideAbajo 1.2s ease-out forwards;
+}
+
+/* El lugar (fade-right) */
+.ceremonia div[data-aos="fade-right"].aos-animate {
+    animation: slideIzquierda 1.2s ease-out forwards;
+}
+
+/* La fecha (fade-left) */
+.ceremonia div[data-aos="fade-left"].aos-animate {
+    animation: slideDerecha 1.2s ease-out forwards;
+}
+
+/* La dirección (fade-up) */
+.ceremonia div[data-aos="fade-up"].aos-animate {
+    animation: entradaContador 1.2s ease-out forwards;
+}
+
+/* El botón de ubicación (zoom-in) */
+.ubicacion[data-aos].aos-animate {
+    animation: entradaZoom 1s ease-out forwards, pulse-gold 2s infinite 1.5s;
+}
+
+/* Regla de invisibilidad inicial para que no parpadeen al cargar */
+.ceremonia [data-aos] {
+    opacity: 0;
+}
+/* ================================================= */
+/* SECCIÓN 3: Recepcion (ESTILOS Y AOS)               */
+/* ================================================= */
+/* --- ACTIVACIÓN MANUAL DE AOS PARA SECCIÓN 3 --- */
+
+/* Título Ceremonia (fade-down) */
+.txtceremonia[data-aos].aos-animate {
+    animation: slideAbajo 1.2s ease-out forwards;
+}
+
+/* El lugar (fade-right) */
+.ceremonia div[data-aos="fade-right"].aos-animate {
+    animation: slideIzquierda 1.2s ease-out forwards;
+}
+
+/* La fecha (fade-left) */
+.ceremonia div[data-aos="fade-left"].aos-animate {
+    animation: slideDerecha 1.2s ease-out forwards;
+}
+
+/* La dirección (fade-up) */
+.ceremonia div[data-aos="fade-up"].aos-animate {
+    animation: entradaContador 1.2s ease-out forwards;
+}
+
+/* El botón de ubicación (zoom-in) */
+.ubicacion[data-aos].aos-animate {
+    animation: entradaZoom 1s ease-out forwards, pulse-gold 2s infinite 1.5s;
+}
+
+/* Regla de invisibilidad inicial para que no parpadeen al cargar */
+.ceremonia [data-aos] {
+    opacity: 0;
+}
+
+.ceremonia {
+    background-color: #162127;
+    padding: 80px 20px;
+    text-align: center;
+    color: #5d4037;
+}
+
+.txtceremonia {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+.ceremonia h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    color: #724b39;
+}
+
+.ceremonia h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #f7f7f7;
+}
+
+.ubicacion {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #44604e;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s;
+}
+
+
+/* --- ESTILOS DEL MODAL (VENTANA) --- */
+.modal-mapa {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Fondo oscuro detrás */
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-modal {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 70vh; /* EL 70% DE LA ALTURA QUE PEDISTE */
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #333;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Clases que aplican las animaciones */
+.animar-texto {
+    opacity: 0; /* Se mantiene invisible hasta que JS añade la clase */
+}
+
+.animar-texto.active {
+    animation: fadeInUpBlur 1s ease forwards;
+}
+
+/* Retrasos (delays) para que no salga todo al mismo tiempo */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+
+/* ================================================= */
+/* --- SECCIÓN 4: INFORMACIÓN FIESTA --- */
+/* ================================================= */
+.informacion-fiesta {
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    background-color: #162127;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f7f7f7;
+}
+
+.txtInformacion {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem;
+    color: #5d4037;
+    margin-bottom: 10px;
+}
+
+.detalles {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.tarjetas-container {
+    width: 100%;
+    max-width: 400px; /* Ajuste para celulares */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tarjeta {
+    background-color: #cf9d7b;
+    padding: 60px 60px 30px; /* espacio arriba para icono */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative;
+    align-items: center;
+}
+
+.tarjeta::before {
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tarjeta h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #162127;
+    text-transform: uppercase;
+}
+.tarjetas-container p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-ver {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #44604e;
+    color: #f7f7f7;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+.tarjeta {
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Icono niños */
+.tarjeta.ninos::before {
+    background-image: url("imgs/icons/ninos.png");
+}
+
+/* Icono vestimenta */
+.tarjeta.vestimenta::before {
+    background-image: url("imgs/icons/vestimenta.png");
+}
+
+/* Icono información */
+.tarjeta.importante::before {
+    background-image: url("imgs/icons/info.png");
+}
+
+/* --- ESTILOS DE LOS NUEVOS MODALES --- */
+.modal-info {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-modal-info {
+    background-color: #f7f7f7;
+    color: #333;
+    width: 85%;
+    padding: 40px 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenido-modal-info h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.5rem;
+    color: #724b39;
+    margin-bottom: 20px;
+}
+
+.contenido-modal-info p{
+    margin: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contacto { margin: 20px 0; font-weight: bold; }
+.firma { margin-top: 25px; font-style: italic; }
+
+/* ================================================= */
+/* ANIMACIONES seccion 4            */
+/* ================================================= */
+.tarjeta {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+}
+
+.tarjeta.activa {
+    animation: tarjetaEntrada 0.9s ease forwards;
+}
+
+/* Delay escalonado */
+.tarjeta:nth-child(1).activa { animation-delay: 0.2s; }
+.tarjeta:nth-child(2).activa { animation-delay: 0.4s; }
+.tarjeta:nth-child(3).activa { animation-delay: 0.6s; }
+
+/* Keyframe elegante */
+@keyframes tarjetaEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.txtInformacion,
+.detalles {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.txtInformacion.activo {
+    animation: textoEntrada 1s ease forwards;
+}
+
+.detalles.activo {
+    animation: textoEntrada 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* Keyframe suave */
+@keyframes textoEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================================= */
+/* SECCIÓN 5: GALERÍA CARRUSEL                       */
+/* ================================================= */
+.galeria {
+    min-height: 100vh;
+    background-color: #162127;
+    padding: 60px 20px;
+    text-align: center;
+    color: #f7f7f7;
+}
+
+.txtGaleria {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem;
+    color: #5d4037;
+    margin-bottom: 10px;
+}
+
+.subGaleria {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* --- Carrusel --- */
+.carousel {
+    position: relative;
+    max-width: 30-0px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.7s ease;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Subtítulo sobre imagen */
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    transform: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+}
+.caption {
+    backdrop-filter: blur(6px);
+    letter-spacing: 0.5px;
+}
+/* --- Controles --- */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.controls button {
+    background-color: #44604e;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    padding: 6px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.txtGaleria,
+.subGaleria,
+.carousel {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.txtGaleria.activo {
+    animation: entradaContador 1s ease forwards;
+}
+
+.subGaleria.activo {
+    animation: entradaContador 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.carousel.activo {
+    animation: entradaZoom 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* ================================================= */
+/* SECCIÓN 6: FINAL CON FUEGOS ARTIFICIALES           */
+/* ================================================= */
+.final {
+    position: relative;
+    height: 100vh;
+    background-color: #162127;
+    overflow: hidden;
+}
+
+#fireworks {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Texto encima */
+.mensaje-final {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
+    top: 200px;
+}
+
+.mensaje-final h1 {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem;
+    color: #f7f7f7;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* Ajuste móvil */
+@media (max-width: 480px) {
+    .mensaje-final h1 {
+        font-size: 2.4rem;
+    }
+}
+
+#texto-final span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+@keyframes caidaLetra {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#parrafo-final {
+    padding: 25px 25px;
+    margin-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 420px;
+    white-space: normal;    
+    word-break: keep-all;     
+    overflow-wrap: normal;     
+}
+
+#parrafo-final span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(18px);
+    margin-right: 4px; /* espacio entre palabras */
+}
+
+@keyframes aparicionPalabra {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ================================================= */
+/* TODAS LAS DEFINICIONES DE KEYFRAMES (MOTOR)       */
+/* ================================================= */
+
+/* 1. Zoom General */
+@keyframes entradaZoom {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* 2. Entrada Contador (Desde abajo) */
+@keyframes entradaContador {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Rebote de Números (Tick tack) */
+@keyframes reboteNumero {
+    0% { transform: translateY(0) scale(1); }
+    30% { transform: translateY(-3px) scale(1.03); }
+    50% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* 4. Slide Izquierda (Para Daniel) */
+@keyframes slideIzquierda {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* 5. Slide Derecha (Para Fernanda) */
+@keyframes slideDerecha {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* 6. Rebote Fecha */
+@keyframes reboteFecha {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.1); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* 7. Slide Abajo (Para el párrafo) */
+@keyframes slideAbajo {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Asegurar que la sección 3 sea visible y limpia para AOS */
+.ceremonia {
+    overflow: hidden; /* Evita que el contenido que viene de los lados cree scroll horizontal */
+}
+
+/* Opcional: Personalizar la velocidad de AOS globalmente o por elemento */
+[data-aos] {
+    pointer-events: none;
+}
+.aos-animate {
+    pointer-events: auto;
+}
+
+
+/* ================================================= */
+/* RESET PARA AOS - PERMITIR ANIMACIÓN AL SUBIR      */
+/* ================================================= */
+
+/* Segunda sección */
+.titulo-seccion[data-aos],
+.contador-tiempo[data-aos] {
+    opacity: 0;
+}
+
+/* Ceremonia */
+.ceremonia [data-aos] {
+    opacity: 0;
+}
