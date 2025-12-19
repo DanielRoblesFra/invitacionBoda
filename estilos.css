@@ -184,11 +184,11 @@ body {
 }
 
 .titulo-seccion[data-aos].aos-animate {
-    animation: entradaZoom 3s ease-out forwards;
+    animation: entradaZoom 1.5s ease-out forwards;
 }
 
 .contador-tiempo[data-aos].aos-animate {
-    animation: entradaContador 3s ease-out 0.3s forwards;
+    animation: entradaContador 1.5s ease-out 0.3s forwards;
 }
 
 /* Clase utilitaria para JS */
@@ -832,4 +832,5 @@ body {
 /* Ceremonia */
 .ceremonia [data-aos] {
     opacity: 0;
+
 }
