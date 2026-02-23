@@ -560,14 +560,14 @@ body {
 /* ================================================= */
 /* SECCIÓN 5: GALERÍA CARRUSEL                       */
 /* ================================================= */
-.txtGaleria {
+.txtGaleria{
     font-family: 'Pinyon Script', cursive; 
     font-size: 3rem;
     margin-bottom: 60px;
     color: #5d4037; 
 }
 
-.subGaleria {
+.subGaleria{
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -777,6 +777,7 @@ body {
     opacity: 0;
 
 }
+
 
 
 
