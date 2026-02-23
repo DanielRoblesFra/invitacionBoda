@@ -560,104 +560,21 @@ body {
 /* ================================================= */
 /* SECCIÓN 5: GALERÍA CARRUSEL                       */
 /* ================================================= */
-.galeria {
-    min-height: 100vh;
-    background-color: #162127;
-    padding: 60px 20px;
-    text-align: center;
-    color: #f7f7f7;
+.swiper {
+  width: 100%;
+  height: 500px;
 }
 
-.txtGaleria {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 3rem;
-    color: #5d4037;
-    margin-bottom: 10px;
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.subGaleria {
-    font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-    margin-bottom: 40px;
-}
-
-/* --- Carrusel --- */
-.carousel {
-    position: relative;
-    max-width: 30-0px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.7s ease;
-}
-
-.slide {
-    min-width: 100%;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-/* Subtítulo sobre imagen */
-.caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    transform: none;
-    padding: 8px 16px;
-    border-radius: 12px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    color: #fff;
-}
-.caption {
-    backdrop-filter: blur(6px);
-    letter-spacing: 0.5px;
-}
-/* --- Controles --- */
-.controls {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-.controls button {
-    background-color: #44604e;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    padding: 6px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.txtGaleria,
-.subGaleria,
-.carousel {
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-.txtGaleria.activo {
-    animation: entradaContador 1s ease forwards;
-}
-
-.subGaleria.activo {
-    animation: entradaContador 1s ease forwards;
-    animation-delay: 0.2s;
-}
-
-.carousel.activo {
-    animation: entradaZoom 1s ease forwards;
-    animation-delay: 0.4s;
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ================================================= */
@@ -834,3 +751,4 @@ body {
     opacity: 0;
 
 }
+
