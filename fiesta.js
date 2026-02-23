@@ -84,7 +84,7 @@ const swiper = new Swiper(".mySwiper", {
 const galeria = document.querySelector(".galeria");
 const tituloGaleria = document.querySelector(".txtGaleria");
 const subGaleria = document.querySelector(".subGaleria");
-const carrusel = document.querySelector(".carousel");
+const carrusel = document.querySelector(".mySwiper");
 
 const observerGaleria = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -103,4 +103,5 @@ const observerGaleria = new IntersectionObserver(entries => {
 });
 
 observerGaleria.observe(galeria);
+
 
