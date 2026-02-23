@@ -62,63 +62,21 @@ observerTexto.observe(textoFiesta);
 /* ================================================= */
 /* CARRUSEL GALERÍA SECCIÓN 5                        */
 /* ================================================= */
-const track = document.querySelector(".carousel-track");
-const slides = document.querySelectorAll(".slide");
-const nextBtn = document.querySelector(".controls .next");
-const prevBtn = document.querySelector(".controls .prev");
+const swiper = new Swiper(".mySwiper", {
+  loop: true,
+  grabCursor: true,
 
-let index = 0;
-let autoplay;
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
 
-function updateCarousel() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-}
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 
-function nextSlide() {
-    index = (index + 1) % slides.length;
-    updateCarousel();
-}
-
-function prevSlide() {
-    index = (index - 1 + slides.length) % slides.length;
-    updateCarousel();
-}
-
-/* Botones */
-nextBtn.addEventListener("click", () => {
-    nextSlide();
-    resetAutoplay();
-});
-
-prevBtn.addEventListener("click", () => {
-    prevSlide();
-    resetAutoplay();
-});
-
-/* Autoplay */
-function startAutoplay() {
-    autoplay = setInterval(nextSlide, 4000);
-}
-
-function resetAutoplay() {
-    clearInterval(autoplay);
-    startAutoplay();
-}
-
-startAutoplay();
-
-/* Swipe táctil */
-let startX = 0;
-
-track.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-});
-
-track.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextSlide();
-    if (endX - startX > 50) prevSlide();
-    resetAutoplay();
+  speed: 900,
 });
 /* ================================================= */
 /* ANIMACIÓN SCROLL SECCIÓN 5                        */
@@ -145,3 +103,4 @@ const observerGaleria = new IntersectionObserver(entries => {
 });
 
 observerGaleria.observe(galeria);
+
