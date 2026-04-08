@@ -593,10 +593,6 @@ body {
     background-color: #162127;
 }
 
-.txtGaleria[data-aos].aos-animate {
-    animation: slideAbajo 1.2s ease-out forwards;
-}
-
 /* Usamos SOLO aspect-ratio (más moderno) */
 .mySwiper {
     width: 100%;
